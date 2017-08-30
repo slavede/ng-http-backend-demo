@@ -23,4 +23,10 @@ export class ApiService {
       .then(response => response.json());
   }
 
+  public saveUser(data) {
+    return this.http.post('/api/resource/user', data)
+      .toPromise()
+      .then(response => response.json() as User);
+  }
+
 }

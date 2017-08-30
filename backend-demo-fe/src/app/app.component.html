@@ -6,4 +6,15 @@
       {{user.firstName + ' ' + user.lastName}} ({{user.personalInfo.age + ' ' + user.personalInfo.gender}})
     </div>
   </div>
+
+  <h3>New User</h3>
+  <form>
+    First name <input [(ngModel)]="newUser.firstName" name="firstName" />
+    Last name <input [(ngModel)]="newUser.lastName" name="lastName" />
+    Age <input [(ngModel)]="newUser.personalInfo.age" type="number" name="age" />
+    Gender <input [(ngModel)]="newUser.personalInfo.gender" name="gender" />
+    <br />
+    <button type="submit" (click)="addNewUser()">Add new user</button>
+  </form>
+
 </div>

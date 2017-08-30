@@ -9,8 +9,11 @@ import { User } from './user.model';
 })
 export class AppComponent {
   public users: User[];
+  public newUser: User;
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+    this.newUser = new User('', '', {age: 0, gender: 'm'});
+  }
 
   getUsers() {
     this.api.getUsers().then((res) => {
@@ -20,5 +23,9 @@ export class AppComponent {
 
   getRules() {
     this.api.getRules();
+  }
+
+  addNewUser() {
+    this.api.saveUser(this.newUser);
   }
 }
