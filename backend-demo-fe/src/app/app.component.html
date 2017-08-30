@@ -1,0 +1,9 @@
+<div>
+  <button (click)="getUsers()">Get users</button>
+  <button (click)="getRules()">Get rules</button>
+  <div *ngIf="users">
+    <div *ngFor="let user of users">
+      {{user.firstName + ' ' + user.lastName}} ({{user.personalInfo.age + ' ' + user.personalInfo.gender}})
+    </div>
+  </div>
+</div>
